@@ -81,8 +81,11 @@
         var valor_economizado_50 = valor_desperdicio / 2;
         var valor_economizado_25 = valor_desperdicio / 4;
 
-        p_prejuizo_reais.innerHTML = `${valor_desperdicio.toFixed(2)}`;
+        let brlFormatMoney = Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+        brlFormatMoney.format(valor_desperdicio);
+
+        p_prejuizo_reais.innerHTML = `${brlFormatMoney.format(valor_desperdicio)}`;
         p_prejuizo_kg.innerHTML = `${desperdicio.toFixed(2)}`;
-        p_lucros_reais.innerHTML = `${valor_economizado_25.toFixed(2)} - ${valor_economizado_50.toFixed(2)}`;
+        p_lucros_reais.innerHTML = `${brlFormatMoney.format(valor_economizado_25)} - ${brlFormatMoney.format(valor_economizado_50)}`;
     }
 </script>
