@@ -11,7 +11,7 @@ main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 20px;
     position: relative;
 }
 
@@ -71,34 +71,32 @@ main {
 
 .calculadora_left_content_container {
     background-color: #fff;
-    width: 40%;
+    width: 50%;
     padding: 20px;
     box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
     border: 1px solid #000;
-    border-radius: 5px;
-}
-
-.calculadora_right_content_container {
-    background-color: #fff;
-    width: 30%;
-    padding: 20px;
-    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
-    border: 1px solid #000;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .calculadora-title {
-    font-size: 1.4em;
+    font-size: 1.1em;
     font-weight: bold;
     color: #240960;
     text-transform: uppercase;
 }
 
 .calculadora-text {
-    font-size: 1em;
-    width: 90%;
+    font-size: 0.9em;
+    width: 95%;
     text-align: justify;
 }
+
+.calculadora-text-perdas,
+.calculadora-text-lucros {
+    font-size: 0.85em;
+    width: 100%;
+}
+
 
 .marked-text {
     color: #240960;
@@ -106,9 +104,9 @@ main {
     font-weight: bold;
 }
 
-.label_peso {
-    font-size: 1.6em;
-    margin: 10px 0 10px 0px;
+.label_input {
+    font-size: 1.2em;
+    margin: 5px 0 10px 0px;
     background: linear-gradient(45deg, #240960, #4500db);
     background-size: 100%;
     -webkit-background-clip: text;
@@ -117,23 +115,103 @@ main {
     -moz-text-fill-color: transparent;
 }
 
-.input_peso {
-    width: 45%;
-    padding: 9px;
+.input_peso,
+.input_preco,
+.input_perda {
+    width: 40%;
+    padding: 10px;
     padding-left: 35px;
-    background: url("icon-peso.png") no-repeat left;
+    background: url("../assets/icon-peso.png") no-repeat left;
     background-size: 25px;
     background-position-x: 5px;
     background-color: white;
-    border: 1.5px solid #000000;
-    margin-bottom: 15px;
+    border: 1px solid #000000;
+    margin-bottom: 10px;
 }
 
-.input_peso:focus {
+.input_preco {
+    background: url("../assets/icon-money.png") no-repeat left;
+    background-size: 25px;
+    background-position-x: 5px;
+}
+
+.input_perda {
+    background: url("../assets/icon-perda-peso.png") no-repeat left;
+    background-size: 25px;
+    background-position-x: 5px;
+}
+
+.input_peso:focus,
+.input_perda:focus,
+.input_preco:focus {
     outline: none;
-    border: 1.5px solid #240960;
+    border: 1px solid #240960;
     border-radius: 10px;
-    transition: 0.3s ease-in;
+    transition: 0.35s ease-in;
+}
+
+.calculadora_right_content_container {
+    display: none;
+    justify-content: space-around;
+    background-color: #fff;
+    width: 35%;
+    padding: 15px;
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.icon-right-content {
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.topic_prejuizos,
+.topic_lucros {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 15px;
+    width: 500px;
+}
+
+.informacao,
+.informacao_perda {
+    font-weight: bold;
+    color: #240960;
+}
+
+.porcentagem_perda {
+    font-weight: bold;
+    color: rgb(255, 25, 25);
+}
+
+.porcentagem_lucro {
+    font-weight: bold;
+    color: rgb(25, 255, 25);
+}
+
+.informacao_perda,
+.informacao_lucro {
+    display: block;
+    color: rgb(255, 25, 25);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.informacao_lucro {
+    color: rgb(25, 255, 25);
+}
+
+.vertical-break {
+    border-left: 3px solid #240960;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .div_input_container {
@@ -154,26 +232,10 @@ main {
     cursor: pointer
 }
 
-.p_topico {
-    font-weight: bold;
-}
 
 .btn_calculo:hover {
     transition: 0.5s;
     background-color: #fff;
     color: #240960;
     box-shadow: 6px 6px 2px 1px rgba(36, 9, 96, 0.9);
-}
-
-.p_prejuizo{
-    color: red;
-}
-.p_lucros{
-    color: green;
-}
-
-.p_label_topicos{
-    margin-top: -5px;
-    font-style: italic;
-    font-size: 0.8rem;
 }
